@@ -1,0 +1,873 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portfólio de Gabriel Mendonça — Estudante de Engenharia de Software e Desenvolvedor Web.">
+    <title>Gabriel Mendonça | Portfólio</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+
+    <!-- Google Fonts: Inter (corpo) + Fira Code (mono / typing) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+
+    <!-- Folha de estilos principal -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- ================================================
+         BARRA DE PROGRESSO DE SCROLL (topo da página)
+    ================================================ -->
+    <div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
+
+    <!-- ================================================
+         CABEÇALHO / NAVEGAÇÃO
+    ================================================ -->
+    <header class="header" id="header">
+        <nav class="nav container">
+
+            <!-- Logo -->
+            <a href="#home" class="nav__logo">
+                GM<span class="nav__logo-dot">.</span>
+            </a>
+
+            <!-- Links de navegação -->
+            <ul class="nav__list" id="navList" role="list">
+                <li><a href="#home"      class="nav__link active">Início</a></li>
+                <li><a href="#about"     class="nav__link">Sobre</a></li>
+                <li><a href="#projects"  class="nav__link">Projetos</a></li>
+                <li><a href="#games"     class="nav__link">Jogos</a></li>
+                <li><a href="#documents" class="nav__link">Estudos</a></li>
+                <li><a href="#videos"    class="nav__link">Vídeos</a></li>
+                <li><a href="#contact"   class="nav__link">Contato</a></li>
+            </ul>
+
+            <!-- Botão hamburguer (mobile) -->
+            <button class="nav__toggle" id="navToggle"
+                    aria-label="Abrir menu"
+                    aria-expanded="false"
+                    aria-controls="navList">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </nav>
+    </header>
+
+    <!-- ================================================
+         CONTEÚDO PRINCIPAL
+    ================================================ -->
+    <main>
+
+        <!-- ========== 1. HERO ========== -->
+        <section id="home" class="hero" aria-label="Apresentação">
+            <div class="container hero__container">
+
+                <!-- Texto do Hero -->
+                <div class="hero__text">
+                    <span class="hero__greeting">👋 Olá, eu sou</span>
+
+                    <h1 class="hero__name">
+                        Gabriel<br>
+                        <span class="text-gradient">Mendonça</span>
+                    </h1>
+
+                    <!-- Linha de texto animado (typing effect) -->
+                    <p class="hero__role" aria-live="polite">
+                        <span class="hero__typed" id="typedText"></span><span class="hero__caret" aria-hidden="true">|</span>
+                    </p>
+
+                    <p class="hero__description">
+                        Estudante de Engenharia de Software apaixonado por criar interfaces
+                        modernas, explorar novas tecnologias e transformar ideias em projetos reais.
+                    </p>
+
+                    <!-- Botões de ação -->
+                    <div class="hero__cta">
+                        <a href="#projects" class="btn btn--primary">Ver Projetos</a>
+                        <a href="#contact"  class="btn btn--outline">Entrar em Contato</a>
+                    </div>
+
+                    <!-- Estatísticas rápidas -->
+                    <div class="hero__stats" aria-label="Estatísticas">
+                        <div class="stat">
+                            <strong data-target="8">0</strong>
+                            <span>Projetos</span>
+                        </div>
+                        <div class="stat-divider" aria-hidden="true"></div>
+                        <div class="stat">
+                            <strong data-target="4">0</strong>
+                            <span>Jogos</span>
+                        </div>
+                        <div class="stat-divider" aria-hidden="true"></div>
+                        <div class="stat">
+                            <strong data-target="12">0</strong>
+                            <span>Tecnologias</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Avatar / imagem de perfil -->
+                <div class="hero__image">
+                    <div class="avatar-wrapper">
+                        <!-- Substitua por sua foto real -->
+                        <img src="assets/images/profile.jpg"
+                             alt="Foto de Gabriel Mendonça"
+                             class="avatar"
+                             onerror="this.style.display='none'">
+                        <!-- Placeholder exibido quando a imagem não carrega -->
+                        <div class="avatar-placeholder" aria-hidden="true">GM</div>
+
+                        <!-- Badges de tecnologia flutuantes -->
+                        <span class="badge badge--html" aria-hidden="true">HTML</span>
+                        <span class="badge badge--css"  aria-hidden="true">CSS</span>
+                        <span class="badge badge--js"   aria-hidden="true">JS</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Indicador de scroll -->
+            <a href="#about" class="scroll-indicator" aria-label="Ir para seção Sobre">
+                <div class="scroll-indicator__wheel" aria-hidden="true"></div>
+            </a>
+        </section>
+
+
+        <!-- ========== 2. SOBRE ========== -->
+        <section id="about" class="section" aria-labelledby="about-title">
+            <div class="container">
+
+                <!-- Cabeçalho da seção -->
+                <div class="section-header reveal">
+                    <span class="section-label">Sobre mim</span>
+                    <h2 class="section-title" id="about-title">
+                        Conhecendo um pouco <span class="text-gradient">mais</span>
+                    </h2>
+                    <p class="section-subtitle">Minha trajetória, interesses e habilidades técnicas.</p>
+                </div>
+
+                <!-- Bio + Skill bars -->
+                <div class="about__grid">
+
+                    <!-- Texto de apresentação -->
+                    <div class="about__bio reveal">
+                        <h3>Quem sou eu?</h3>
+                        <p>
+                            Sou estudante de <strong>Engenharia de Software</strong>, apaixonado pelo
+                            desenvolvimento web e sempre em busca de aprender novas tecnologias. Acredito
+                            que bons projetos nascem da combinação de código limpo, boa experiência de
+                            usuário e vontade de resolver problemas reais.
+                        </p>
+                        <p>
+                            No meu portfólio você encontrará projetos que vão desde <strong>web design</strong>
+                            e <strong>aplicações interativas</strong> até jogos, análises e experimentos com
+                            APIs. Cada projeto representa uma etapa da minha evolução como desenvolvedor.
+                        </p>
+
+                        <!-- Tags de interesse -->
+                        <div class="about__interests">
+                            <span class="interest-tag">🌐 Web Development</span>
+                            <span class="interest-tag">🎨 UI/UX Design</span>
+                            <span class="interest-tag">⚙️ APIs &amp; Backend</span>
+                            <span class="interest-tag">🎮 Game Dev</span>
+                            <span class="interest-tag">📊 Visualização de Dados</span>
+                        </div>
+                    </div>
+
+                    <!-- Barras de habilidade -->
+                    <div class="about__skills reveal">
+                        <h3>Habilidades Técnicas</h3>
+                        <div class="skills-list">
+
+                            <div class="skill-item">
+                                <div class="skill-item__header">
+                                    <span>HTML5</span><span>92%</span>
+                                </div>
+                                <div class="skill-bar" role="progressbar" aria-valuenow="92" aria-valuemin="0" aria-valuemax="100" aria-label="HTML5 92%">
+                                    <div class="skill-bar__fill" style="--level: 92%"></div>
+                                </div>
+                            </div>
+
+                            <div class="skill-item">
+                                <div class="skill-item__header">
+                                    <span>CSS3 / Responsividade</span><span>88%</span>
+                                </div>
+                                <div class="skill-bar" role="progressbar" aria-valuenow="88" aria-valuemin="0" aria-valuemax="100" aria-label="CSS3 88%">
+                                    <div class="skill-bar__fill" style="--level: 88%"></div>
+                                </div>
+                            </div>
+
+                            <div class="skill-item">
+                                <div class="skill-item__header">
+                                    <span>JavaScript</span><span>80%</span>
+                                </div>
+                                <div class="skill-bar" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" aria-label="JavaScript 80%">
+                                    <div class="skill-bar__fill" style="--level: 80%"></div>
+                                </div>
+                            </div>
+
+                            <div class="skill-item">
+                                <div class="skill-item__header">
+                                    <span>Git &amp; GitHub</span><span>75%</span>
+                                </div>
+                                <div class="skill-bar" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" aria-label="Git 75%">
+                                    <div class="skill-bar__fill" style="--level: 75%"></div>
+                                </div>
+                            </div>
+
+                            <div class="skill-item">
+                                <div class="skill-item__header">
+                                    <span>React</span><span>65%</span>
+                                </div>
+                                <div class="skill-bar" role="progressbar" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100" aria-label="React 65%">
+                                    <div class="skill-bar__fill" style="--level: 65%"></div>
+                                </div>
+                            </div>
+
+                            <div class="skill-item">
+                                <div class="skill-item__header">
+                                    <span>Node.js / APIs REST</span><span>60%</span>
+                                </div>
+                                <div class="skill-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" aria-label="Node.js 60%">
+                                    <div class="skill-bar__fill" style="--level: 60%"></div>
+                                </div>
+                            </div>
+
+                            <div class="skill-item">
+                                <div class="skill-item__header">
+                                    <span>Python</span><span>50%</span>
+                                </div>
+                                <div class="skill-bar" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" aria-label="Python 50%">
+                                    <div class="skill-bar__fill" style="--level: 50%"></div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Stack de tecnologias (chips) -->
+                <div class="tech-stack reveal">
+                    <h3>Tecnologias</h3>
+                    <div class="tech-chips" role="list" aria-label="Tecnologias que uso">
+                        <span class="chip chip--mastered" role="listitem">HTML5</span>
+                        <span class="chip chip--mastered" role="listitem">CSS3</span>
+                        <span class="chip chip--mastered" role="listitem">JavaScript</span>
+                        <span class="chip chip--mastered" role="listitem">Git</span>
+                        <span class="chip chip--mastered" role="listitem">Figma</span>
+                        <span class="chip chip--learning" role="listitem">React</span>
+                        <span class="chip chip--learning" role="listitem">TypeScript</span>
+                        <span class="chip chip--learning" role="listitem">Node.js</span>
+                        <span class="chip chip--learning" role="listitem">Next.js</span>
+                        <span class="chip chip--learning" role="listitem">Python</span>
+                        <span class="chip chip--learning" role="listitem">Tailwind CSS</span>
+                        <span class="chip chip--learning" role="listitem">SQL</span>
+                    </div>
+                    <div class="chip-legend" aria-label="Legenda">
+                        <span class="chip chip--mastered chip--sm">Dominando</span>
+                        <span class="chip chip--learning chip--sm">Aprendendo</span>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- ========== 3. PROJETOS ========== -->
+        <section id="projects" class="section section--alt" aria-labelledby="projects-title">
+            <div class="container">
+
+                <div class="section-header reveal">
+                    <span class="section-label">Portfólio</span>
+                    <h2 class="section-title" id="projects-title">
+                        Projetos em <span class="text-gradient">Destaque</span>
+                    </h2>
+                    <p class="section-subtitle">Filtre por categoria para encontrar o que procura.</p>
+                </div>
+
+                <!-- Botões de filtro -->
+                <div class="filter-bar reveal" role="group" aria-label="Filtrar projetos por categoria">
+                    <button class="filter-btn active" data-filter="all">Todos</button>
+                    <button class="filter-btn" data-filter="web-design">Web Design</button>
+                    <button class="filter-btn" data-filter="app">Aplicações Web</button>
+                    <button class="filter-btn" data-filter="api">APIs</button>
+                    <button class="filter-btn" data-filter="backend">Backend</button>
+                    <button class="filter-btn" data-filter="dashboard">Dashboards</button>
+                    <button class="filter-btn" data-filter="experiment">Experimental</button>
+                </div>
+
+                <!-- Grade de projetos -->
+                <div class="projects-grid" id="projectsGrid">
+
+                    <!-- Projeto 1 — Web Design -->
+                    <article class="project-card reveal" data-category="web-design">
+                        <div class="project-card__cover">
+                            <img src="assets/images/project1.jpg" alt="Casa Aurora" class="project-card__img" loading="lazy"
+                                 onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+                            <div class="project-card__cover-fallback">
+                                <span>01</span><p>Casa Aurora</p>
+                            </div>
+                            <div class="project-card__overlay">
+                                <a href="https://jefbiel.github.io/casa-aurora/casa-aurora/" target="_blank" rel="noreferrer" class="btn btn--sm btn--glass">↗ Demo</a>
+                                <a href="https://github.com/jefbiel/casa-aurora.git" target="_blank" rel="noreferrer" class="btn btn--sm btn--glass">⌥ GitHub</a>
+                            </div>
+                        </div>
+                        <div class="project-card__body">
+                            <div class="project-card__tags"><span class="tag">web-design</span></div>
+                            <h3 class="project-card__title">Casa Aurora</h3>
+                            <p class="project-card__desc">Site responsivo de um restaurante fictício, com foco em hierarquia visual, apresentação do cardápio e experiência mobile.</p>
+                            <div class="project-card__techs">
+                                <span class="tech-pill">HTML</span>
+                                <span class="tech-pill">CSS</span>
+                                <span class="tech-pill">JavaScript</span>
+                            </div>
+                        </div>
+                    </article>
+                    
+                    <!-- Projeto 2 — Aplicação Web (E-commerce FIAP / Ancora) -->
+                    <article class="project-card reveal" data-category="app">
+                        <div class="project-card__cover">
+                            <div class="project-card__cover-fallback" style="display:flex">
+                                <span>02</span><p>E-commerce</p>
+                            </div>
+                            <div class="project-card__overlay">
+                                <a href="https://algo-front-kohl.vercel.app/" target="_blank" rel="noreferrer" class="btn btn--sm btn--glass">↗ Demo</a>
+                                <a href="https://github.com/Gustavo-b017/algo-front" target="_blank" rel="noreferrer" class="btn btn--sm btn--glass">⌥ GitHub</a>
+                            </div>
+                        </div>
+                        <div class="project-card__body">
+                            <div class="project-card__tags"><span class="tag">app</span></div>
+                            <h3 class="project-card__title">E-commerce de Peças Automotivas</h3>
+                            <p class="project-card__desc">Plataforma de compra online desenvolvida em parceria com a empresa Ancora na FIAP — catálogo dinâmico com filtro em cascata via API. <strong>Top 3</strong> na feira de tecnologia NEXT da FIAP 2025.</p>
+                            <div class="project-card__techs">
+                                <span class="tech-pill">React.js</span>
+                                <span class="tech-pill">JavaScript</span>
+                                <span class="tech-pill">SCSS</span>
+                                <span class="tech-pill">API REST</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Projeto 3 — Dashboard -->
+                    <article class="project-card reveal" data-category="dashboard">
+                        <div class="project-card__cover">
+                            <div class="project-card__cover-fallback" style="display:flex">
+                                <span>03</span><p>Dashboard</p>
+                            </div>
+                            <div class="project-card__overlay">
+                                <a href="#" class="btn btn--sm btn--glass">↗ Preview</a>
+                            </div>
+                        </div>
+                        <div class="project-card__body">
+                            <div class="project-card__tags"><span class="tag">dashboard</span></div>
+                            <h3 class="project-card__title">Dashboard Concept</h3>
+                            <p class="project-card__desc">Painel data-driven com layout modular, gráficos interativos e visual clean. Conceito desenvolvido para estudo de UI.</p>
+                            <div class="project-card__techs">
+                                <span class="tech-pill">Figma</span>
+                                <span class="tech-pill">CSS</span>
+                                <span class="tech-pill">JS</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Projeto 4 — Web Design -->
+                    <article class="project-card reveal" data-category="web-design">
+                        <div class="project-card__cover">
+                            <div class="project-card__cover-fallback" style="display:flex">
+                                <span>04</span><p>Landing</p>
+                            </div>
+                            <div class="project-card__overlay">
+                                <a href="#" class="btn btn--sm btn--glass">↗ Preview</a>
+                            </div>
+                        </div>
+                        <div class="project-card__body">
+                            <div class="project-card__tags"><span class="tag">web-design</span></div>
+                            <h3 class="project-card__title">Product Landing Page</h3>
+                            <p class="project-card__desc">Landing page de alta conversão com storytelling visual e CTA estratégico. Desenvolvida com foco em UX.</p>
+                            <div class="project-card__techs">
+                                <span class="tech-pill">HTML</span>
+                                <span class="tech-pill">CSS</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Projeto 5 — API -->
+                    <article class="project-card reveal" data-category="api">
+                        <div class="project-card__cover">
+                            <div class="project-card__cover-fallback" style="display:flex">
+                                <span>05</span><p>Weather App</p>
+                            </div>
+                            <div class="project-card__overlay">
+                                <a href="#" class="btn btn--sm btn--glass">↗ Demo</a>
+                                <a href="#" class="btn btn--sm btn--glass">⌥ GitHub</a>
+                            </div>
+                        </div>
+                        <div class="project-card__body">
+                            <div class="project-card__tags"><span class="tag">api</span></div>
+                            <h3 class="project-card__title">Weather App</h3>
+                            <p class="project-card__desc">Previsão do tempo em tempo real consumindo a <strong>OpenWeather API</strong>. Exibe temperatura, umidade e condições climáticas.</p>
+                            <div class="project-card__techs">
+                                <span class="tech-pill">JavaScript</span>
+                                <span class="tech-pill">OpenWeather API</span>
+                                <span class="tech-pill">CSS</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Projeto 6 — Aplicação Web -->
+                    <article class="project-card reveal" data-category="app">
+                        <div class="project-card__cover">
+                            <div class="project-card__cover-fallback" style="display:flex">
+                                <span>06</span><p>Task Manager</p>
+                            </div>
+                            <div class="project-card__overlay">
+                                <a href="#" class="btn btn--sm btn--glass">↗ Demo</a>
+                                <a href="#" class="btn btn--sm btn--glass">⌥ GitHub</a>
+                            </div>
+                        </div>
+                        <div class="project-card__body">
+                            <div class="project-card__tags"><span class="tag">app</span></div>
+                            <h3 class="project-card__title">Task Manager</h3>
+                            <p class="project-card__desc">Gerenciador de tarefas com LocalStorage, filtros por status e animações suaves. Interface responsiva para produtividade.</p>
+                            <div class="project-card__techs">
+                                <span class="tech-pill">JavaScript</span>
+                                <span class="tech-pill">LocalStorage</span>
+                                <span class="tech-pill">HTML</span>
+                                <span class="tech-pill">CSS</span>
+                            </div>
+                        </div>
+                    </article>
+
+
+                    <!-- Projeto 7 — Backend -->
+                    <article class="project-card reveal" data-category="backend">
+                        <div class="project-card__cover">
+                            <div class="project-card__cover-fallback" style="display:flex">
+                                <span>07</span><p>Cadastro C#</p>
+                            </div>
+                            <div class="project-card__overlay">
+                                <a href="https://github.com/jefbiel/cp2_C.git" target="_blank" rel="noreferrer" class="btn btn--sm btn--glass">⌥ GitHub</a>
+                            </div>
+                        </div>
+                        <div class="project-card__body">
+                            <div class="project-card__tags"><span class="tag">backend</span></div>
+                            <h3 class="project-card__title">POO em C#</h3>
+                            <p class="project-card__desc">Projeto individual sobre Programação Orientada a Objetos em C#, abordando encapsulamento, herança, polimorfismo e abstração, com exercícios práticos de classes, sobrecarga, sobrescrita e hierarquia de veículos.</p>
+                            <div class="project-card__techs">
+                                <span class="tech-pill">C#</span>
+                                <span class="tech-pill">POO</span>
+                                <span class="tech-pill">Herança</span>
+                                <span class="tech-pill">Polimorfismo</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Projeto 8 — Backend -->
+                    <article class="project-card reveal" data-category="backend">
+                        <div class="project-card__cover">
+                            <div class="project-card__cover-fallback" style="display:flex">
+                                <span>08</span><p>Cadastro C#</p>
+                            </div>
+                            <div class="project-card__overlay">
+                                <a href="https://github.com/jefbiel/Fiap-devC.1" target="_blank" rel="noreferrer" class="btn btn--sm btn--glass">⌥ GitHub</a>
+                                <a href="https://github.com/jefbiel/Fiap-devC.1/blob/main/telaSistemaDeCadastro.png" target="_blank" rel="noreferrer" class="btn btn--sm btn--glass">🖼 Imagem</a>
+                            </div>
+                        </div>
+                        <div class="project-card__body">
+                            <div class="project-card__tags"><span class="tag">backend</span></div>
+                            <h3 class="project-card__title">Sistema Genérico de Cadastros em C#</h3>
+                            <p class="project-card__desc">Sistema simples de cadastro genérico para cadastrar, listar e buscar informações, utilizando List, Dictionary, métodos, classes, genéricos, estruturas de repetição e menu interativo.</p>
+                            <div class="project-card__techs">
+                                <span class="tech-pill">C#</span>
+                                <span class="tech-pill">Generics</span>
+                                <span class="tech-pill">List</span>
+                                <span class="tech-pill">Dictionary</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Projeto 9 — Explorador de Livros -->
+                    <article class="project-card reveal" data-category="api app">
+                        <div class="project-card__cover">
+                            <img src="assets/images/project-livros.jpg" alt="Explorador de Livros" class="project-card__img" loading="lazy"
+                                 onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+                            <div class="project-card__cover-fallback" style="display:flex">
+                                <span>09</span><p>Livros</p>
+                            </div>
+                            <div class="project-card__overlay">
+                                <a href="https://site-de-livros-swart.vercel.app/" target="_blank" rel="noreferrer" class="btn btn--sm btn--glass">↗ Demo</a>
+                                <a href="https://github.com/jefbiel/site-de-livros.git" target="_blank" rel="noreferrer" class="btn btn--sm btn--glass">⌥ GitHub</a>
+                            </div>
+                        </div>
+                        <div class="project-card__body">
+                            <div class="project-card__tags"><span class="tag">app</span></div>
+                            <h3 class="project-card__title">Explorador de Livros</h3>
+                            <p class="project-card__desc">Aplicação web para pesquisar, filtrar e favoritar livros usando a <strong>API Google Books</strong>. Busca inteligente, filtros por idioma/gênero e design responsivo.</p>
+                            <div class="project-card__techs">
+                                <span class="tech-pill">HTML</span>
+                                <span class="tech-pill">CSS</span>
+                                <span class="tech-pill">JavaScript</span>
+                                <span class="tech-pill">API Google Books</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    
+
+                </div><!-- /projects-grid -->
+            </div>
+        </section>
+
+
+        <!-- ========== 4. JOGOS ========== -->
+        <section id="games" class="section" aria-labelledby="games-title">
+            <div class="container">
+
+                <div class="section-header reveal">
+                    <span class="section-label">Game Dev</span>
+                    <h2 class="section-title" id="games-title">
+                        Jogos <span class="text-gradient">Desenvolvidos</span>
+                    </h2>
+                    <p class="section-subtitle">Projetos de desenvolvimento de jogos com demonstrações em vídeo.</p>
+                </div>
+
+                <div class="games-grid">
+
+                    <!-- Jogo 1 -->
+                    <article class="game-card reveal">
+                        <div class="game-card__video">
+                            <!--
+                                Substitua VIDEO_ID pelo ID real do seu vídeo no YouTube.
+                                Exemplo: https://www.youtube.com/watch?v=dQw4w9WgXcQ → ID = dQw4w9WgXcQ
+                            -->
+                            <iframe
+                                src="https://www.youtube.com/embed/VIDEO_ID_JOGO1"
+                                title="Demonstração do Jogo 1"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                allowfullscreen
+                                loading="lazy">
+                            </iframe>
+                        </div>
+                        <div class="game-card__body">
+                            <h3 class="game-card__title">Jogo 1 — Nome do Jogo</h3>
+                            <p class="game-card__desc">
+                                Descreva a mecânica principal, a linguagem utilizada e o que você aprendeu
+                                desenvolvendo este projeto.
+                            </p>
+                            <div class="game-card__techs">
+                                <span class="tech-pill">JavaScript</span>
+                                <span class="tech-pill">Canvas API</span>
+                            </div>
+                            <div class="game-card__actions">
+                                <a href="#" target="_blank" rel="noreferrer" class="btn btn--primary btn--sm">🎮 Jogar</a>
+                                <a href="#" target="_blank" rel="noreferrer" class="btn btn--outline btn--sm">⌥ GitHub</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Jogo 2 -->
+                    <article class="game-card reveal">
+                        <div class="game-card__video">
+                            <iframe
+                                src="https://www.youtube.com/embed/VIDEO_ID_JOGO2"
+                                title="Demonstração do Jogo 2"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                allowfullscreen
+                                loading="lazy">
+                            </iframe>
+                        </div>
+                        <div class="game-card__body">
+                            <h3 class="game-card__title">Jogo 2 — Nome do Jogo</h3>
+                            <p class="game-card__desc">
+                                Descreva o segundo jogo: contexto de criação, tecnologias usadas e os
+                                aprendizados obtidos durante o desenvolvimento.
+                            </p>
+                            <div class="game-card__techs">
+                                <span class="tech-pill">HTML</span>
+                                <span class="tech-pill">CSS</span>
+                                <span class="tech-pill">JavaScript</span>
+                            </div>
+                            <div class="game-card__actions">
+                                <a href="#" target="_blank" rel="noreferrer" class="btn btn--primary btn--sm">🎮 Jogar</a>
+                                <a href="#" target="_blank" rel="noreferrer" class="btn btn--outline btn--sm">⌥ GitHub</a>
+                            </div>
+                        </div>
+                    </article>
+
+                </div><!-- /games-grid -->
+            </div>
+        </section>
+
+
+        <!-- ========== 5. DOCUMENTOS E ESTUDOS ========== -->
+        <section id="documents" class="section section--alt" aria-labelledby="docs-title">
+            <div class="container">
+
+                <div class="section-header reveal">
+                    <span class="section-label">Estudos</span>
+                    <h2 class="section-title" id="docs-title">
+                        Documentos e <span class="text-gradient">Análises</span>
+                    </h2>
+                    <p class="section-subtitle">Materiais acadêmicos, análises técnicas e documentações produzidas durante os estudos.</p>
+                </div>
+
+                <div class="docs-grid">
+
+                    <!-- Documento 1 -->
+                    <article class="doc-card reveal">
+                        <div class="doc-card__icon" aria-hidden="true"></div>
+                        <div class="doc-card__body">
+                            <span class="doc-card__type">Análise Técnica</span>
+                            <h3 class="doc-card__title">Global Solution - DataScience and Statistical Computing</h3>
+                            <p class="doc-card__desc">Estudo sobre crescimento e análise estatística da produção de energia no Brasil, desenvolvido com técnicas de DataScience e computação estatística.</p>
+                            <div class="doc-card__meta">
+                                <span>📅 2025</span>
+                                <span>📖 Data Science</span>
+                            </div>
+                            <a href="https://github.com/jefbiel/documentos/blob/main/Global%20Solution%20-%20DataScience%20and%20Statistical%20Computing.pdf" target="_blank" rel="noreferrer" class="btn btn--outline btn--sm">⬇ Ver no GitHub</a>
+                        </div>
+                    </article>
+
+                    <!-- Documento 2 -->
+                    <article class="doc-card reveal">
+                        <div class="doc-card__icon" aria-hidden="true">📊</div>
+                        <div class="doc-card__body">
+                            <span class="doc-card__type">Análise Estatística</span>
+                            <h3 class="doc-card__title">Dispersão</h3>
+                            <p class="doc-card__desc">Análise aprofundada sobre medidas de dispersão e variabilidade em estatística descritiva com aplicações práticas.</p>
+                            <div class="doc-card__meta">
+                                <span>📅 2025</span>
+                                <span>📖 Estatística</span>
+                            </div>
+                            <a href="https://github.com/jefbiel/documentos/blob/fa6f2fb8a64767dc5c34a7c97854d4de7e14624b/AnalisesEstatisticas/Dispersa%CC%83o.pdf" target="_blank" rel="noreferrer" class="btn btn--outline btn--sm">⬇ Ver no GitHub</a>
+                        </div>
+                    </article>
+
+                    <!-- Documento 3 -->
+                    <article class="doc-card reveal">
+                        <div class="doc-card__icon" aria-hidden="true">🔥</div>
+                        <div class="doc-card__body">
+                            <span class="doc-card__type">Análise Estatística</span>
+                            <h3 class="doc-card__title">Análise Estatística de Incêndios Florestais</h3>
+                            <p class="doc-card__desc">Análise abrangente de padrões e tendências em incêndios florestais utilizando metodologias estatísticas avançadas e técnicas de Data Science.</p>
+                            <div class="doc-card__meta">
+                                <span>📅 2025</span>
+                                <span>📖 Estatística</span>
+                            </div>
+                            <a href="https://github.com/jefbiel/documentos/blob/main/Ana%CC%81lise%20Estati%CC%81stica%20de%20Ince%CC%82ndios%20Florestais.pdf" target="_blank" rel="noreferrer" class="btn btn--outline btn--sm">⬇ Ver no GitHub</a>
+                        </div>
+                    </article>
+
+                    <!-- Documento 4 -->
+                    <article class="doc-card reveal">
+                        <div class="doc-card__icon" aria-hidden="true">🎮</div>
+                        <div class="doc-card__body">
+                            <span class="doc-card__type">Documentação</span>
+                            <h3 class="doc-card__title">AR/VR Hangar</h3>
+                            <p class="doc-card__desc">Documentação técnica do projeto AR/VR Hangar com detalhes de arquitetura, implementação e especificações da experiência 3D.</p>
+                            <div class="doc-card__meta">
+                                <span>📅 2025</span>
+                                <span>📖 Realidade Virtual</span>
+                            </div>
+                            <a href="https://github.com/jefbiel/documentos/blob/960b52ed4d73745e7ab5dd58a44dc590ceace6c5/Modelagem3D/ModelagemHallNordico.pdf" target="_blank" rel="noreferrer" class="btn btn--outline btn--sm">⬇ Ver no GitHub</a>
+                        </div>
+                    </article>
+
+                    <!-- Documento 5 -->
+                    <article class="doc-card reveal">
+                        <div class="doc-card__icon" aria-hidden="true">🛠️</div>
+                        <div class="doc-card__body">
+                            <span class="doc-card__type">Documentação</span>
+                            <h3 class="doc-card__title">CP1 - Modelagem Jeferson Gabriel de Mendonça</h3>
+                            <p class="doc-card__desc">Documentação acadêmica de modelagem e design de projeto desenvolvido como parte do programa educacional.</p>
+                            <div class="doc-card__meta">
+                                <span>📅 2025</span>
+                                <span>📖 Modelagem</span>
+                            </div>
+                            <a href="https://github.com/jefbiel/documentos/blob/main/CP1_Modelagem_Jeferson_Gabriel_de_Mendonca.pdf" target="_blank" rel="noreferrer" class="btn btn--outline btn--sm">⬇ Ver no GitHub</a>
+                        </div>
+                    </article>
+
+                </div><!-- /docs-grid -->
+            </div>
+        </section>
+
+
+        <!-- ========== 6. VÍDEOS ========== -->
+        <section id="videos" class="section" aria-labelledby="videos-title">
+            <div class="container">
+
+                <div class="section-header reveal">
+                    <span class="section-label">Conteúdo</span>
+                    <h2 class="section-title" id="videos-title">
+                        Vídeos e <span class="text-gradient">Demonstrações</span>
+                    </h2>
+                    <p class="section-subtitle">Explicações, tutoriais e demonstrações dos projetos no YouTube.</p>
+                </div>
+
+                <!-- Filtro de vídeos -->
+                <div class="filter-bar reveal" role="group" aria-label="Filtrar vídeos por categoria">
+                    <button class="filter-btn active" data-video-filter="all">Todos</button>
+                    <button class="filter-btn" data-video-filter="project">Projetos</button>
+                    <button class="filter-btn" data-video-filter="tutorial">Tutoriais</button>
+                    <button class="filter-btn" data-video-filter="study">Estudos</button>
+                </div>
+
+                <div class="videos-grid" id="videosGrid">
+
+                    <!-- Vídeo 1 — Projeto -->
+                    <article class="video-card reveal" data-video-category="project">
+                        <div class="video-card__embed">
+                            <iframe src="https://www.youtube.com/embed/OfKhWtjddNM"
+                                    title="Hangar Star Wars na Unreal Engine 5"
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                    allowfullscreen loading="lazy">
+                            </iframe>
+                        </div>
+                        <div class="video-card__body">
+                            <span class="video-card__category">Projeto</span>
+                            <h3 class="video-card__title">Checkpoint UE5: Hangar Star Wars</h3>
+                            <p class="video-card__desc">Vídeo demonstrando o player caminhando pela cena 3D, com colisões, iluminação e interação criada com Blueprints na Unreal Engine 5.</p>
+                        </div>
+                    </article>
+
+                    <!-- Vídeo 2 — Projeto (Loja de Autopeças UE5) -->
+                    <article class="video-card reveal" data-video-category="project">
+                        <div class="video-card__embed">
+                            <iframe src="https://www.youtube.com/embed/3dZJRWxZfA0"
+                                    title="Loja de Autopeças — Cena 3D Unreal Engine 5"
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                    allowfullscreen loading="lazy">
+                            </iframe>
+                        </div>
+                        <div class="video-card__body">
+                            <span class="video-card__category">Projeto</span>
+                            <h3 class="video-card__title">Checkpoint UE5: Loja de Autopeças</h3>
+                            <p class="video-card__desc">Tour pela cena 3D completa com objetos modelados, texturas aplicadas, composição de cenário e acabamentos em paredes, piso e teto.</p>
+                        </div>
+                    </article>
+
+                    <!-- Vídeo 3 — Projeto (Pitch Nautilus Dynamics) -->
+                    <article class="video-card reveal" data-video-category="project">
+                        <div class="video-card__embed">
+                            <iframe src="https://www.youtube.com/embed/rYKECw5n5cg"
+                                    title="Pitch Nautilus Dynamics"
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                    allowfullscreen loading="lazy">
+                            </iframe>
+                        </div>
+                        <div class="video-card__body">
+                            <span class="video-card__category">Projeto</span>
+                            <h3 class="video-card__title">Pitch Nautilus Dynamics</h3>
+                            <p class="video-card__desc">Projeto acadêmico realizado em parceria com o Instituto Oceanográfico - USP e a Oceans 20. Este pitch representa uma proposta simulada para solução da limpeza dos oceanos.</p>
+                        </div>
+                    </article>
+
+                </div><!-- /videos-grid -->
+            </div>
+        </section>
+
+
+        <!-- ========== 7. CONTATO ========== -->
+        <section id="contact" class="section section--alt" aria-labelledby="contact-title">
+            <div class="container">
+
+                <div class="section-header reveal">
+                    <span class="section-label">Contato</span>
+                    <h2 class="section-title" id="contact-title">
+                        Vamos construir <span class="text-gradient">juntos</span>
+                    </h2>
+                    <p class="section-subtitle">Estou aberto a oportunidades, projetos colaborativos e boa conversa sobre tecnologia.</p>
+                </div>
+
+                <div class="contact__layout">
+
+                    <!-- Redes sociais -->
+                    <div class="contact__info reveal">
+                        <h3>Me encontre nas redes</h3>
+                        <div class="social-links">
+
+                            <a href="https://github.com/jefbiel/" target="_blank" rel="noreferrer" class="social-link">
+                                <div class="social-link__icon">
+                                    <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                                        <path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/>
+                                    </svg>
+                                </div>
+                                <div class="social-link__text">
+                                    <strong>GitHub</strong>
+                                    <span>github.com/jefbiel</span>
+                                </div>
+                            </a>
+
+                            <a href="https://www.linkedin.com/in/gabrieldemendonca" target="_blank" rel="noreferrer" class="social-link">
+                                <div class="social-link__icon">
+                                    <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                                        <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                                    </svg>
+                                </div>
+                                <div class="social-link__text">
+                                    <strong>LinkedIn</strong>
+                                    <span>linkedin.com/in/gabrieldemendonca</span>
+                                </div>
+                            </a>
+
+                            <a href="mailto:gabriel221104@gmail.com" class="social-link">
+                                <div class="social-link__icon">
+                                    <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                                        <path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+                                    </svg>
+                                </div>
+                                <div class="social-link__text">
+                                    <strong>E-mail</strong>
+                                    <span>gabriel221104@gmail.com</span>
+                                </div>
+                            </a>
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ================================================
+         RODAPÉ
+    ================================================ -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__content">
+                <div class="footer__brand">
+                    <a href="#home" class="nav__logo">GM<span class="nav__logo-dot">.</span></a>
+                    <p>Portfólio de Gabriel Mendonça<br>Estudante de Engenharia de Software</p>
+                </div>
+                <nav class="footer__nav" aria-label="Navegação do rodapé">
+                    <a href="#home">Início</a>
+                    <a href="#about">Sobre</a>
+                    <a href="#projects">Projetos</a>
+                    <a href="#games">Jogos</a>
+                    <a href="#documents">Estudos</a>
+                    <a href="#videos">Vídeos</a>
+                    <a href="#contact">Contato</a>
+                </nav>
+            </div>
+            <div class="footer__bottom">
+                <p>© <span id="year"></span> Gabriel Mendonça — Feito com código e café ☕</p>
+            </div>
+        </div>
+    </footer>
+
+
+    <!-- Toast de notificação -->
+    <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+    <!-- Script principal -->
+    <script src="js/script.js"></script>
+</body>
+</html>
+
