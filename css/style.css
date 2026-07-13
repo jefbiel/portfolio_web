@@ -556,9 +556,10 @@ main section[id] {
 
 .about__grid {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
     gap: var(--space-xl);
     margin-bottom: var(--space-xl);
+    align-items: start;
 }
 
 .about__bio h3,
@@ -577,6 +578,48 @@ main section[id] {
 
 .about__bio p strong {
     color: var(--text);
+}
+
+.about__recognitions,
+.about__skills {
+    padding: var(--space-lg);
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--border);
+    background: linear-gradient(180deg, rgba(28, 35, 51, 0.95), rgba(22, 27, 34, 0.88));
+    box-shadow: var(--shadow-sm);
+}
+
+.about__recognitions h3,
+.about__skills h3 {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--text);
+    margin-bottom: var(--space-md);
+}
+
+.recognition-list {
+    display: grid;
+    gap: 1rem;
+}
+
+.recognition-item {
+    padding: 1rem 1rem 1rem 1.05rem;
+    border-radius: var(--radius-md);
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.recognition-item h4 {
+    font-size: 0.98rem;
+    font-weight: 700;
+    color: var(--text);
+    margin-bottom: 0.45rem;
+}
+
+.recognition-item p {
+    color: var(--text-muted);
+    font-size: 0.94rem;
+    line-height: 1.7;
 }
 
 /* Tags de área de interesse */
@@ -1463,6 +1506,11 @@ main section[id] {
     /* Sobre em coluna única */
     .about__grid {
         grid-template-columns: 1fr;
+    }
+
+    .about__recognitions,
+    .about__skills {
+        padding: 1.25rem;
     }
 }
 
