@@ -557,9 +557,24 @@ main section[id] {
 .about__grid {
     display: grid;
     grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
+    grid-template-areas:
+        "bio recognitions"
+        "skills recognitions";
     gap: var(--space-xl);
     margin-bottom: var(--space-xl);
     align-items: start;
+}
+
+.about__bio {
+    grid-area: bio;
+}
+
+.about__recognitions {
+    grid-area: recognitions;
+}
+
+.about__skills {
+    grid-area: skills;
 }
 
 .about__bio h3,
@@ -1506,6 +1521,10 @@ main section[id] {
     /* Sobre em coluna única */
     .about__grid {
         grid-template-columns: 1fr;
+        grid-template-areas:
+            "bio"
+            "recognitions"
+            "skills";
     }
 
     .about__recognitions,
